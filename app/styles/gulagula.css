@@ -1,0 +1,124 @@
+body {
+  background: #ffffff url(/images/loading.gif) center center no-repeat;
+}
+header {
+  background-color: #c8301b;
+  border-top: 4px solid #fff;
+}
+header > img {
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-top: none;
+}
+header > a {
+  background-color: #de4126;
+  color: #fff;
+  font-weight: 900;
+  border: 3px solid #fff;
+  border-top: none;
+  -webkit-box-shadow: 0px 13px 4px -8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 13px 4px -8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 13px 4px -8px rgba(0, 0, 0, 0.6);
+}
+header > a:hover {
+  background-color: #f72316;
+}
+.navbar {
+  display: none;
+}
+.cmd-box {
+  background-color: #dadada;
+}
+.menu-item {
+  background: transparent url(/images/menuitem.png) left top repeat;
+}
+.choosable {
+  background: transparent url(/images/choosable.png) left top repeat;
+}
+ul.category .crrheader {
+  background-color: #c8301b;
+}
+ul.category > li {
+  background-color: #c8301b;
+}
+ul.category > li > a {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+ul.category-product > li {
+  border-left: 8px solid #fff;
+  border-bottom: 15px solid #fff;
+  min-height: 15em;
+}
+ul.category-product > li img {
+  border: 4px solid #fff;
+  border-top: none;
+  border-left: none;
+}
+ul.composition > li > a {
+  background-color: transparent;
+  color: #000;
+}
+ul.composition > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu-item > .composition {
+  background-color: rgba(255, 255, 0, 0.2);
+  border: 2px solid #000;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.menu-item > .composition > li {
+  padding: 0;
+}
+.menu-item > .composition > li > .cmd-box {
+  background-color: #fff;
+}
+.menu-item > .composition .composition li {
+  padding: 0;
+}
+.menu-item > .composition .composition li a {
+  border: none;
+  border-radius: 0;
+  color: #999;
+  padding-left: 1.8em;
+}
+.menu-item > .composition .composition li a:hover {
+  padding-left: 2em;
+}
+#productlist h1 {
+  background-color: #c8301b;
+  font-weight: 900;
+  color: #fff;
+}
+#productlist li {
+  border: none;
+  padding: 0;
+}
+#productlist h3 {
+  border: 1px solid #fff;
+  margin: 0.1em;
+  opacity: 0.5;
+}
+#productlist h3.hover {
+  background-color: #2188bd;
+  opacity: 1;
+}
+#productlist h3.selected {
+  border-color: #2188bd;
+  font-style: italic;
+  font-weight: 900;
+  opacity: 1;
+}
+#productlist .add-cmd {
+  background-color: #2188bd;
+  color: #fff;
+}
+#productlist .cancel-cmd {
+  background-color: #999;
+  color: #fff;
+}

@@ -1,0 +1,80 @@
+<header>
+	<img src="images/gulagula.png" alt="{{ menu.model.name }}">
+	<a open-cat-list href="#">Categorias...</a>
+</header>
+
+<ul class="category">
+	<li ng-repeat="category in menu.model.categories">
+		<a id="{{ category.numericalId }}" name="{{ category.numericalId }}"><span>{{ category.name }}</span></a>
+		<span class="cmd-box">
+			<a href="#" ng-click="menu.setTarget(category)" open-list class="append-product">Adicionar produto</a>
+		</span>
+		<ul class="category-product">
+			<li focus-hashed-item ng-repeat="product in category.products" id="{{ product.hashId }}" class="{{ product.type }}">
+				<div>
+					<menu-picture alt="{{ product.fullDescription }}" image="{{ product.image[0] }}"></menu-picture>
+					<h3 class="name">
+						<span class="cmd-box">
+							<a href="#" call-controller ng-click="menu.removeItem(category, product)" class="remove-selected">Remover</a>
+							<a href="#" ng-click="menu.setTarget(product)" open-list class="append-product">Adicionar produto</a>
+						</span>
+						{{ product.name }}
+					</h3>
+					<span class="price">{{ product.price }}</span>
+				</div>
+
+				<ul focus-hashed-item id="{{ cmp.hashId }}" ng-repeat="cmp in product.products" class="composition">
+
+					<li>
+						<div class="cmd-box">
+							<a href="#" ng-click="menu.setTarget(cmp)" open-list role=button class="cmd-add" role=title>{{ cmp.name }}</a>
+							<a href="#" call-controller ng-click="menu.removeItem(product, cmp)" class="remove-selected">Remover</a>
+						</div>		
+
+						<ul ng-repeat="compose in cmp.products" class="composition">
+							<li><a href="#" call-controller ng-click="menu.removeItem(cmp, compose)" role=button>{{ compose.name }}</a></li>
+						</ul>
+					</li>
+				</ul><!-- end composition -->
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+<div id="productlist">
+	<div>
+		<h1>Lista de produtos</h1>
+		<div>
+			<ul class="category-product">
+				<li ng-repeat="product in menu.products" class=" {{ product.type }}">
+					<div>
+						<h3 set-choice-status set-hover-status class="name" ng-click="menu.addProductToCopy(product)">
+							{{ product.name }}
+						</h3>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="cmd">
+			<a role=button class="cancel-cmd" ng-click="menu.cleanProductsList()" close-list href="#">&#215;</a>
+			<a role=button class="add-cmd" ng-click="menu.copyProducts()" close-list href="#">&rarrpl;</a>
+		</div>
+	</div>
+</div>
+
+<div id="catlist">
+	<div>
+		<ul class="category">
+			<li ng-repeat="category in menu.model.categories">
+				<a href="#{{ category.numericalId }}" scrool-to><span>{{ category.name }}</span></a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div id="message">
+	<p>Produto adicionado com sucesso!</p>
+</div>
+
+<div id="overlay"></div>
