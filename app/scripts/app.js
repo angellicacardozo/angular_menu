@@ -30,16 +30,6 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/menuitems', {
-        templateUrl: 'views/menuitems/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/menuitems/category', {
-        templateUrl: 'views/menuitems/category.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
       .otherwise({
         redirectTo: '/'
       });
